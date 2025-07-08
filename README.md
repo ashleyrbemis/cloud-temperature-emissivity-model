@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repository contains the code and resources for my research project focused on **modeling molecular cloud temperatures and star formation rates**. This work is built upon the foundational code from my published work: Bemis et al., A&A, 692, A146 (2024). The primary objective of this project is to **understand the physical conditions that govern star formation in diverse galactic environments, with a particular emphasis on gas temperature profiles and their influence on star formation efficiency.**
+This repository contains the code and resources for my research project focused on modeling molecular cloud temperatures, molecular line emissivities (i.e. HCN, CO and also HCO+), and star formation rates. This work is built upon the foundational code from my published work: Bemis et al., A&A, 692, A146 (2024). The primary objective of this project is to understand the physical conditions that govern star formation in diverse galactic environments, with a particular emphasis on gas temperature profiles, variations in emissivity, and their influence on observational estimates of (dense) gas star formation efficiency.
 
 ## Problem Statement
 
-Directly measuring kinetic temperatures in dense molecular gas is a significant challenge in astrophysics due to the optical depth of these regions to thermal continuum emission. This project addresses this by developing a computational framework to infer these temperatures. It leverages sophisticated radiative transfer models (specifically using a RADEX-like approach) and synthetic or observed spectral line intensities of key molecular species (e.g., CO, HCN, HCO+). The derived temperatures are crucial for accurately characterizing the physical conditions (e.g., density, pressure) within molecular clouds, which in turn provides vital insights into the mechanisms and efficiency of star formation.
+Directly measuring kinetic temperatures in dense molecular gas is a significant challenge in astrophysics due to the optical depth of these regions to thermal continuum emission. This project addresses this by developing a computational framework to infer these temperatures. It uses radiative transfer modeling (integrating RADEX) to generate synthetic spectral line intensities of key molecular species (e.g., CO, HCN, HCO+). The derived temperatures are crucial for accurately characterizing the physical conditions (e.g., density, pressure) within molecular clouds, which in turn provides vital insights into the mechanisms and efficiency of star formation.
 
 ## Data Sources
 
@@ -28,13 +28,13 @@ This project utilizes and generates several types of data:
 
 This project employs a multi-faceted computational approach to model molecular clouds and infer their properties:
 
-* **Temperature Estimation**: The core of the model involves estimating gas temperatures by balancing various heating and cooling mechanisms (e.g., cosmic ray heating, dust-gas cooling, H2 formation heating). The temperature estimation code is based on the methodology described in Sharda, P., & Krumholz, M. R. 2022, MNRAS, 509, 1959. This is primarily handled by `check_temp.py` and `temp_estimate.py`.
+* **Temperature Estimation**: The core of the model involves estimating gas temperatures by balancing various heating and cooling mechanisms (e.g., cosmic ray heating, dust-gas cooling, H2 formation heating). The temperature estimation code is based on the methodology described in Sharda & Krumholz 2022, MNRAS, 509, 1959. This is primarily handled by `check_temp.py` and `temp_estimate.py`.
 
-* **Density Probability Distribution Functions (PDFs)**: The project constructs PDFs based on turbulence and gravitational collapse theories to describe the density structure of the clouds. This allows for a statistical representation of the gas distribution. More information on the density profiles and PDFs used can be found in Ashley R. Bemis and Christine D. Wilson 2023 ApJ 945 42. Functions for this are implemented in `PDF_model_functions.py`.
+* **Density Probability Distribution Functions (PDFs)**: The project constructs PDFs based on turbulence and gravitational collapse theories to describe the density structure of the clouds. This allows for a statistical representation of the gas distribution. More information on the density profiles and PDFs used can be found in Bemis & Wilson 2023 ApJ 945 42. Functions for this are implemented in `PDF_model_functions.py`.
 
-* **Radiative Transfer Modeling**: The model employs RADEX (Radiative Transfer Code for Molecular Lines), integrated via `radex_functions.py`, to simulate molecular line emission from the modeled clouds. This provides crucial insights into their observable properties, such as line fluxes, excitation temperatures, and optical depths for species like CO, HCN, and HCO+.
+* **Radiative Transfer Modeling**: This code employs RADEX (Radiative Transfer Code for Molecular Lines), integrated via `radex_functions.py`, to simulate molecular line emission from the modeled clouds. This provides crucial insights into their observable properties, such as line fluxes, excitation temperatures, and optical depths for species like CO, HCN, and HCO+.
 
-* **Star Formation Rate (SFR) Calculation**: By integrating the derived PDFs with star formation efficiencies, the project estimates Star Formation Rates (SFRs) and depletion times for the modeled clouds. Functions for these calculations are found in `emissivity_model_functions.py`.
+* **Star Formation Rate (SFR) Calculation**: By integrating the derived PDFs with star formation efficiencies, the project estimates Star Formation Rates (SFRs) and depletion times based on analytical star formation theories (Burkhart, B. 2018, ApJ, 863, 118 and Burkhart, B., & Mocz, P. 2019, ApJ, 879, 129) for the modeled clouds. Functions for these calculations are found in `emissivity_model_functions.py`.
 
 * **Workflow Orchestration**:
 
@@ -48,15 +48,15 @@ This project employs a multi-faceted computational approach to model molecular c
 
 This modeling effort has yielded several key insights into molecular cloud properties and star formation:
 
-* Our models successfully reproduce observed HCN and CO J=1-0 intensities, emissivities, and excitation trends across a wide range of galactic environments, consistent with previous numerical and observational studies.
+* Our models successfully reproduce observed HCN and CO J=1-0 intensities across a wide range of galactic environments, consistent with previous numerical and observational studies.
 
-* The HCN/CO intensity ratio primarily tracks gas at moderate densities (approximately $n \sim 10^{3.5} \text{ cm}^{-3}$), rather than strictly dense gas (e.g., $n > 10^{4.5} \text{ cm}^{-3}$). This suggests that HCN/CO may not be a reliable tracer of the gravitationally bound, star-forming gas fraction.
+* The modeled HCN/CO intensity ratio primarily tracks gas at moderate densities (approximately $n \sim 10^{3.5} \text{ cm}^{-3}$), rather than strictly dense gas (e.g., $n > 10^{4.5} \text{ cm}^{-3}$). This suggests that HCN/CO may not be a reliable tracer of the densest, gravitationally bound, star-forming gas fraction.
 
 * Variations in CO emissivity are primarily driven by changes in optical depth due to gas dynamics, contributing significantly to the scatter observed in star formation scaling relations. In contrast, HCN emissivity is more strongly correlated with excitation, indicating different physical origins for their variations.
 
 ## Technologies Used
 
-* Python `[3.9+]`
+* Python `3.9`
 
 * NumPy
 
@@ -79,15 +79,14 @@ To set up and run this project locally, follow these steps:
 1.  **Clone the Repository:**
     Open your terminal or command prompt and execute:
     ```bash
-    git clone [https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git)
-    cd YOUR_REPO_NAME
+    git clone [https://github.com/ashleyrbemis/cloud-temperature-emissivity-model.git](https://github.com/ashleyrbemis/cloud-temperature-emissivity-model.git)
+    cd cloud-temperature-emissivity-model
     ```
-    *(Remember to replace `YOUR_GITHUB_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub username and the name you choose for your repository.)*
 
 2.  **Create and Activate Conda Environment:**
     It is highly recommended to use a dedicated Conda environment to manage project dependencies.
     ```bash
-    conda create -n model_hcn_co_env python=[YOUR_PYTHON_VERSION_USED_IN_PROJECT, e.g., 3.9]
+    conda create -n model_hcn_co_env python=3.9
     conda activate model_hcn_co_env
     ```
 
@@ -164,7 +163,7 @@ Ashley R. Bemis
 
 * www.linkedin.com/in/ashley-r-bemis
 
-* [Your GitHub Profile URL]
+* https://github.com/ashleyrbemis/cloud-temperature-emissivity-model
 
 ## License
 
