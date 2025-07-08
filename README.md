@@ -187,7 +187,8 @@ This project is licensed under the MIT License. See the `LICENSE.md` file for de
 
 **Citing This Work:**
 
-If you use this code or its derivatives in your own research or projects, please cite the associated publication:
+If you use this code or its derivatives in your own research or projects to model emissivities, please cite the associated publication:
 
-Bemis et al., A&A, 692, A146 (2024)
-Bemis & Wilson, ApJ, 945, 42 (2023)
+Bemis et al.,(2024) A&A, 692, A146
+Bemis & Wilson, (2023) ApJ, 945, 42
+Sharda & Krumholz, (2022) MNRAS, 509, 1959
