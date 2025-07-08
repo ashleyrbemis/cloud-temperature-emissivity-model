@@ -1,4 +1,4 @@
-# Modeling Molecular Cloud Temperatures and Star Formation
+# Modeling Molecular Cloud Temperature, Molecular Line Emissivities, and Star Formation
 
 ## Overview
 
