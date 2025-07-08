@@ -1,0 +1,29 @@
+astropy @ file:///Users/runner/miniforge3/conda-bld/astropy_1711553022859/work
+astropy-iers-data @ file:///home/conda/feedstock_root/build_artifacts/astropy-iers-data_1749448375680/work
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1749972191589/work/certifi
+contourpy @ file:///Users/runner/miniforge3/conda-bld/contourpy_1729602398863/work
+cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1733332471406/work
+fonttools @ file:///Users/runner/miniforge3/conda-bld/fonttools_1751573365454/work
+importlib_metadata @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_importlib-metadata_1747934053/work
+importlib_resources @ file:///home/conda/feedstock_root/build_artifacts/importlib_resources_1736252299705/work
+joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1748019130050/work
+kiwisolver @ file:///Users/runner/miniforge3/conda-bld/kiwisolver_1725459226886/work
+matplotlib==3.9.4
+munkres==1.1.4
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1707225689808/work/dist/numpy-1.26.4-cp39-cp39-macosx_11_0_arm64.whl#sha256=989042d872faf31c0434bd99fec5ec09b5c5d9a0b8125edd0ae869c5d8851048
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1745345660/work
+pandas @ file:///Users/runner/miniforge3/conda-bld/pandas_1749099750763/work
+pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1751482050926/work
+pyerfa @ file:///Users/runner/miniforge3/conda-bld/pyerfa_1731377716778/work
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1743089729650/work
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_python-dateutil_1751104122/work
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1742920838005/work
+PyYAML @ file:///Users/runner/miniforge3/conda-bld/pyyaml_1737454732336/work
+scikit-learn @ file:///Users/runner/miniforge3/conda-bld/scikit-learn_1736496791599/work/dist/scikit_learn-1.6.1-cp39-cp39-macosx_11_0_arm64.whl#sha256=aaca544017450d0f614af6e4c06601e2aa132d6dfbb957b49e7c5fc3b37f6417
+scipy @ file:///Users/runner/miniforge3/conda-bld/scipy-split_1716470312029/work/dist/scipy-1.13.1-cp39-cp39-macosx_11_0_arm64.whl#sha256=95cc9a6aceed50037865da4a45baac05fd0dcee7e557c6149fde270f2ffebafc
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1733380938961/work
+threadpoolctl @ file:///home/conda/feedstock_root/build_artifacts/threadpoolctl_1741878222898/work
+tornado @ file:///Users/runner/miniforge3/conda-bld/tornado_1748003404111/work
+tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1742745135198/work
+unicodedata2 @ file:///Users/runner/miniforge3/conda-bld/unicodedata2_1736692557404/work
+zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1749421620841/work

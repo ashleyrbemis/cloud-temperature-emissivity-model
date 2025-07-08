@@ -1,0 +1,30 @@
+# Python specific ignores
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.log
+*.tmp
+
+# emacs
+*~
+
+# Jupyter Notebook specific ignores
+.ipynb_checkpoints/
+# If you have any .json files that are temporary outputs, add them here
+# *.json
+
+# files to ignore 
+model_grid.tsv
+aa47879-23.pdf
+# ignore large generated output files or plots:
+output/
+figures/
+
+# Operating System specific ignores
+.DS_Store # macOS specific
+Thumbs.db # Windows specific
+
+# Sensitive information (if you ever add any, keep it out of Git!)
+# .env
+# api_keys.txt
