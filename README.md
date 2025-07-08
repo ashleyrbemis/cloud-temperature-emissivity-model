@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the code and resources for my research project focused on modeling molecular cloud temperatures, molecular line emissivities (i.e. HCN, CO and also HCO+), and star formation rates. This work is built upon the foundational code from my published work: Bemis et al., A&A, 692, A146 (2024). The primary objective of this project is to understand the physical conditions that govern star formation in diverse galactic environments, with a particular emphasis on gas temperature profiles, variations in emissivity, and their influence on observational estimates of (dense) gas star formation efficiency.
+This repository contains the code and resources for modeling molecular cloud temperatures, molecular line emissivities (i.e. HCN, CO and also HCO+), and star formation rates. This work is built upon the foundational code from my published work: Bemis et al., A&A, 692, A146 (2024). The primary objective of this project is to understand the physical conditions that govern star formation in diverse galactic environments, with a particular emphasis on gas temperature profiles, variations in emissivity, and their influence on observational estimates of (dense) gas star formation efficiency.
 
 ## Problem Statement
 
@@ -104,11 +104,17 @@ To set up and run this project locally, follow these steps:
         python input_measurements_grid.py
         ```
         This script will:
+
         * Read input cloud properties from `model_subset300.csv`.
+
         * Estimate gas temperature profiles using a modified code based on Sharda, P., & Krumholz, M. R. 2022.
+
         * Generate plots of heating/cooling terms and temperature profiles, saving them to `figures/models/`.
+
         * Save detailed model information to the `output/` directory.
+
         * Append summarized model results to `model_grid.tsv`.
+
         * **Note:** The provided code in this repository processes only the first five data points from `model_subset300.csv` for demonstration purposes. The full research paper, Bemis et al., A&A, 692, A146 (2024), uses all 300 data points and generates a more comprehensive set of results.
 
     b.  **Run the radiative transfer and molecular line calculations:**
@@ -116,11 +122,17 @@ To set up and run this project locally, follow these steps:
         python run_model_grid.py
         ```
         This script will:
+
         * Read detailed cloud model outputs from the `output/` directory.
+
         * Perform radiative transfer calculations to derive molecular line properties for CO, HCN, and HCO+.
+
         * Calculate star formation properties and molecular emissivities.
+
         * Save derived properties to individual `.tsv` files in the `output/` directory.
+
         * Generate plots of molecular line fluxes and optical depths, saving them to `figures/models/`.
+
         * *(Note: Multiprocessing is commented out in this version and runs sequentially.)*
 
 ## Project Structure
@@ -176,3 +188,4 @@ This project is licensed under the MIT License. See the `LICENSE.md` file for de
 If you use this code or its derivatives in your own research or projects, please cite the associated publication:
 
 Bemis et al., A&A, 692, A146 (2024)
+Bemis & Wilson, ApJ, 945, 42 (2023)
