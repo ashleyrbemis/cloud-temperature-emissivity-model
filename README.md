@@ -208,7 +208,7 @@ Ashley R. Bemis
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE.md` file for details. This open-source license allows for broad reuse, modification, and distribution, encouraging community contributions and academic collaboration.
+This project is licensed under the MIT License. See the `LICENSE` file for details. This open-source license allows for broad reuse, modification, and distribution, encouraging community contributions and academic collaboration.
 
 ---
 
@@ -217,6 +217,8 @@ This project is licensed under the MIT License. See the `LICENSE.md` file for de
 If you use this code or its derivatives in your own research or projects to model emissivities, please cite the associated publication:
 
 * Bemis et al., (2024) A&A, 692, A146
+
+Additional relevant works that provide foundational context for this code include:
 
 * Bemis & Wilson, (2023) ApJ, 945, 42
 
