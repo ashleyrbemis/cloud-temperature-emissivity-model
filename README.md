@@ -2,11 +2,9 @@
 
 ## Overview
 
-This repository contains the code and resources for modeling molecular cloud temperatures, molecular line emissivities (i.e. HCN, CO and also HCO+), and star formation rates. This work is built upon the foundational code from my published work: Bemis et al., A&A, 692, A146 (2024). The primary objective of this project is to understand the physical conditions that govern star formation in diverse galactic environments, with a particular emphasis on gas temperature profiles, variations in emissivity, and their influence on observational estimates of (dense) gas star formation efficiency.
+This repository contains the code and resources for modeling molecular cloud temperatures, molecular line emissivities (i.e. HCN, CO and HCO+), and star formation rates. This work is built upon the foundational code from my published work: Bemis et al., A&A, 692, A146 (2024). The primary objective of this project is to understand the physical conditions that govern star formation in diverse galactic environments, with a particular emphasis on gas temperature profiles, variations in emissivity, and their influence on observational estimates of (dense) gas star formation efficiency.
 
-## Problem Statement
-
-Directly measuring kinetic temperatures in dense molecular gas is a significant challenge in astrophysics due to the optical depth of these regions to thermal continuum emission. This project addresses this by developing a computational framework to infer these temperatures. It uses radiative transfer modeling (integrating RADEX) to generate synthetic spectral line intensities of key molecular species (e.g., CO, HCN, HCO+). The derived temperatures are crucial for accurately characterizing the physical conditions (e.g., density, pressure) within molecular clouds, which in turn provides vital insights into the mechanisms and efficiency of star formation.
+A key uncertainty in molecular gas properties is kinetic temperature. This project builds off of the computational framework in Sharda & Krumholz, MNRAS, 509, 1959 (2022) to infer these temperatures. It combines this with radiative transfer modeling (via RADEX) to generate synthetic spectral line intensities of key molecular species (e.g., CO, HCN, HCO+). The derived temperatures are crucial for accurately characterizing the physical conditions (e.g., density, pressure) within molecular clouds, which in turn provides vital insights into the mechanisms and efficiency of star formation.
 
 ## Data Sources
 
