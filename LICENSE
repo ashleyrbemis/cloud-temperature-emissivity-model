@@ -16,6 +16,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+LIABILITY, WHETHER IN AN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Academic Citation
+If you use this code or its derivatives in your academic research or publications, we kindly request that you cite the following associated paper:
+
+Bemis et al., (2024) A&A, 692, A146
+
+Additional relevant works that provide foundational context for this code include:
+
+Bemis & Wilson, (2023) ApJ, 945, 42
+
+Sharda & Krumholz, (2022) MNRAS, 509, 1959
+
+Your citation helps acknowledge the scientific work behind this software and supports its continued development.
