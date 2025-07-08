@@ -17,12 +17,13 @@ __pycache__/
 # files to ignore 
 model_grid.tsv
 aa47879-23.pdf
+combined_model_output.csv
 # ignore large generated output files or plots:
 output/
 figures/
 
 # Operating System specific ignores
-.DS_Store # macOS specific
+*.DS_Store # macOS specific
 Thumbs.db # Windows specific
 
 # Sensitive information (if you ever add any, keep it out of Git!)

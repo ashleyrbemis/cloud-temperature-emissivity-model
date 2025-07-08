@@ -326,21 +326,56 @@ def expectation_value_mass_weighted(s_array,arr,pdf_s,i0=0):
     
     return np.abs(sum_above/sum_tot)
 
-def expectation_value_mass_weighted_linear(n_array,arr,pdf_n,i0=0):
+def expectation_value_mass_weighted_linear(n_array, arr, pdf_n, i0=0):
+    """
+    Calculates the mass-weighted expectation value of a given array (arr) over a distribution (pdf_n).
 
-    pdf_trap = (pdf_n + np.roll(pdf_n,-1))/2
-    pdf_trap[-1] = np.nan
+    This function computes an average value where each data point's contribution is weighted
+    by the mass it represents within the molecular cloud's density distribution. This is crucial
+    for understanding the average properties of the gas, as denser regions (which contain more mass)
+    will have a proportionally larger influence on the average.
 
-    trap = (arr + np.roll(arr,-1))/2
-    trap[-1] = np.nan
-    
-    dn = np.abs(n_array - np.roll(n_array,-1))
-    dn[-1] = np.nan
-    
-    sum_above = np.nansum(pdf_trap[i0:]*trap[i0:]*n_array[i0:]*dn[i0:])
-    sum_tot = np.nansum(pdf_trap[i0:]*dn[i0:]*n_array[i0:])
-    
-    return np.abs(sum_above/sum_tot)
+    The calculation is based on numerical integration using the trapezoidal rule, specifically:
+    $$ \\frac{\\int_{n_{i0}}^{\\infty} \\text{arr}(n) \\cdot n \\cdot p(n) \\, dn}{\\int_{n_{i0}}^{\\infty} n \\cdot p(n) \\, dn} $$
+    where $n$ is the gas volume density, $p(n)$ is the probability density function (PDF) of the gas volume density,
+    and $\\text{arr}(n)$ is the quantity whose mass-weighted average is being calculated.
+    The integration starts from an index `i0` in the `n_array`.
+
+    Args:
+        n_array (np.ndarray): Array of gas volume densities ($n$).
+        arr (np.ndarray): The array of values (e.g., temperature, flux, heating/cooling term)
+                          for which the mass-weighted average is to be calculated. This array
+                          should correspond to `n_array`.
+        pdf_n (np.ndarray): The probability density function (PDF) of the gas volume density,
+                            divided by `n_array` (i.e., $p(n)/n$). This ensures correct mass weighting
+                            when combined with `n_array` and `dn`.
+        i0 (int, optional): Starting index for the integration. Defaults to 0 (integrates over the full range).
+
+    Returns:
+        float: The mass-weighted expectation value. Returns absolute value.
+    """
+    # Calculate trapezoidal approximation for the PDF values
+    pdf_trap = (pdf_n + np.roll(pdf_n, -1)) / 2
+    pdf_trap[-1] = np.nan # Last element is NaN as it's a shifted average
+
+    # Calculate trapezoidal approximation for the array values (e.g., temperature, flux)
+    trap = (arr + np.roll(arr, -1)) / 2
+    trap[-1] = np.nan # Last element is NaN
+
+    # Calculate the differential change in density (dn)
+    dn = np.abs(n_array - np.roll(n_array, -1))
+    dn[-1] = np.nan # Last element is NaN
+
+    # Numerator: Sum of (quantity * density * PDF * dn)
+    # This approximates the integral of quantity * mass density over the density range
+    sum_above = np.nansum(pdf_trap[i0:] * trap[i0:] * n_array[i0:] * dn[i0:])
+    # Denominator: Sum of (density * PDF * dn)
+    # This approximates the integral of mass density over the density range (total mass)
+    sum_tot = np.nansum(pdf_trap[i0:] * dn[i0:] * n_array[i0:])
+
+    # Return the ratio, which is the mass-weighted expectation value
+    return np.abs(sum_above / sum_tot)
+
 
 def expectation_value_volume_weighted_linear(n_array,arr,pdf_n,i0=0):
 
