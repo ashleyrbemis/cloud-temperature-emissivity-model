@@ -42,8 +42,6 @@ This project employs a multi-faceted computational approach to model molecular c
 
     * `run_model_grid.py`: This script processes the output from `input_measurements_grid.py` to perform radiative transfer calculations and derive molecular line properties and star formation characteristics. It runs sequentially in this repository version.
 
-    * `constants.py`: Defines physical and numerical constants used consistently throughout the project.
-
 ## Key Findings / Results
 
 This modeling effort has yielded several key insights into molecular cloud properties and star formation:
@@ -75,6 +73,9 @@ This modeling effort has yielded several key insights into molecular cloud prope
 ## How to Run the Project
 
 To set up and run this project locally, follow these steps:
+
+0.  **Install RADEX (External Dependency):**
+    This project relies on the RADEX radiative transfer code, which needs to be installed separately. Please follow the installation instructions available here: [https://home.strw.leidenuniv.nl/~moldata/radex.html](https://home.strw.leidenuniv.nl/~moldata/radex.html)
 
 1.  **Clone the Repository:**
     Open your terminal or command prompt and execute:
@@ -134,6 +135,7 @@ To set up and run this project locally, follow these steps:
         * Generate plots of molecular line fluxes and optical depths, saving them to `figures/models/`.
 
         * *(Note: Multiprocessing is commented out in this version and runs sequentially.)*
+
 
 ## Project Structure
 
